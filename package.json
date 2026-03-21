@@ -1,0 +1,25 @@
+{
+  "name": "cypress-poc",
+  "version": "1.0.0",
+  "description": "Cypress test automation framework for Conduit (RealWorld) app - API & UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "cypress-conduit-poc"
+  },
+  "keywords": [
+    "Cypress",
+    "automation",
+    "Custom",
+    "Commands",
+    "+",
+    "Lightweight",
+    "Page",
+    "Objects"
+  ],
+  "author": "Marco Urquidi",
+  "license": "MIT"
+}
