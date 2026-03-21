@@ -1,0 +1,9 @@
+ {                                                         
+    "validArticle": {
+      "title": "Test Article Title",                                                              
+      "description": "This is a test article description",
+      "body": "This is the body of the test article with some meaningful content.",               
+      "tagList": ["javascript", "testing"]                  
+    }                                                                                             
+  }
+     
