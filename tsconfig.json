@@ -1,0 +1,19 @@
+  {                                                         
+    "compilerOptions": {                                                                          
+      "target": "ES2021",
+      "lib": ["ES2021", "DOM", "DOM.Iterable"],                                                   
+      "types": ["cypress", "node"],                         
+      "moduleResolution": "node",                                                                 
+      "strict": true,                                       
+      "esModuleInterop": true,                                                                    
+      "resolveJsonModule": true,                                                                  
+      "isolatedModules": true,
+      "baseUrl": ".",                                                                             
+      "paths": {                                            
+        "@support/*": ["cypress/support/*"],                                                      
+        "@fixtures/*": ["cypress/fixtures/*"]               
+      }                                                                                           
+    },
+    "include": ["cypress/**/*.ts", "cypress.config.ts"],                                          
+    "exclude": ["node_modules"]                                                                   
+  } 
