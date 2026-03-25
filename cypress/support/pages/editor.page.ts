@@ -30,7 +30,7 @@ export class EditorPage {
     return this;
   }
 
-  publish() {
+  clickPublish() {
     cy.get(this.publishButton).click();
     return this;
   }
@@ -42,7 +42,7 @@ export class EditorPage {
     if (tags) {
       tags.forEach((tag) => this.addTag(tag));
     }
-    this.publish();
+    this.clickPublish();
     return this;
   }
 }

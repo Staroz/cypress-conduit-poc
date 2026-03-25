@@ -20,7 +20,7 @@ export class LoginPage {
     return this;
   }
 
-  submit() {
+  clickSubmit() {
     cy.get(this.submitButton).click();
     return this;
   }
@@ -28,7 +28,7 @@ export class LoginPage {
   loginWith(email: string, password: string) {
     this.fillEmail(email);
     this.fillPassword(password);
-    this.submit();
+    this.clickSubmit();
     return this;
   }
 }

@@ -26,7 +26,7 @@ export class RegisterPage {
     return this;
   }
 
-  submit() {
+  clickSubmit() {
     cy.get(this.submitButton).click();
     return this;
   }
@@ -35,7 +35,7 @@ export class RegisterPage {
     this.fillUsername(username);
     this.fillEmail(email);
     this.fillPassword(password);
-    this.submit();
+    this.clickSubmit();
     return this;
   }
 }
