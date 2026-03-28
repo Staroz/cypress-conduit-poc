@@ -14,6 +14,7 @@ describe("UI: Create Article", { tags: ["@ui", "@smoke"] }, () => {
   beforeEach(() => {
     cy.loginViaApi(user.email, user.password);
     editorPage.visit();
+    cy.url().should("include", "/editor");
   });
 
   it("should display the editor form", () => {

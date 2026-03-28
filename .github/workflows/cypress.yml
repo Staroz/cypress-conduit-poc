@@ -15,7 +15,7 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          env: grepTags=@smoke
+          env: grepTags=@smoke,grepOmitFiltered=true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: cypress-io/github-action@v6
         with:
-          env: grepTags=@api
+          env: grepTags=@api,grepOmitFiltered=true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -50,7 +50,7 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
-          env: grepTags=@ui
+          env: grepTags=@ui,grepOmitFiltered=true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
