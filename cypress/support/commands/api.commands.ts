@@ -1,6 +1,6 @@
 Cypress.Commands.add("createArticleViaApi", (article: Article) => {
   const apiUrl = Cypress.env("apiUrl");
-  const token = window.localStorage.getItem("jwtToken");
+  const token = Cypress.env("authToken");
   return cy.request({
     method: "POST",
     url: `${apiUrl}/articles`,
@@ -13,7 +13,7 @@ Cypress.Commands.add("createArticleViaApi", (article: Article) => {
 
 Cypress.Commands.add("deleteArticleViaApi", (slug: string) => {
   const apiUrl = Cypress.env("apiUrl");
-  const token = window.localStorage.getItem("jwtToken");
+  const token = Cypress.env("authToken");
   return cy.request({
     method: "DELETE",
     url: `${apiUrl}/articles/${slug}`,

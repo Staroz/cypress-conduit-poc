@@ -30,8 +30,9 @@ export default defineConfig({
       grepOmitFiltered: true,
     },
     setupNodeEvents(_on, config) {
-      const { plugin } = require("@cypress/grep/plugin");
-      plugin(config);
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const grepPlugin = require("@cypress/grep/plugin");
+      grepPlugin.plugin(config);
       return config;
     },
   },

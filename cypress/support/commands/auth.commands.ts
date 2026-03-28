@@ -7,6 +7,7 @@ Cypress.Commands.add("loginViaApi", (email: string, password: string) => {
   }).then((response) => {
     const { user } = response.body;
     window.localStorage.setItem("jwtToken", user.token);
+    Cypress.env("authToken", user.token);
     return user;
   });
 });

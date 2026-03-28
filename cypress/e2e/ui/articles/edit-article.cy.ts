@@ -17,6 +17,7 @@ describe("UI: Edit Article", { tags: ["@ui", "@regression"] }, () => {
   beforeEach(() => {
     cy.loginViaApi(user.email, user.password);
     cy.createArticleViaApi(buildArticle()).then((article) => {
+      expect(article.slug).to.exist;
       articleSlug = article.slug!;
     });
   });
