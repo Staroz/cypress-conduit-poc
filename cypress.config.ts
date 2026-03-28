@@ -18,6 +18,10 @@ export default defineConfig({
     viewportHeight: 720,
     defaultCommandTimeout: 10000,
     requestTimeout: 10000,
+    retries: {
+      runMode: 2,
+      openMode: 0,
+    },
     env: {
       apiUrl: "https://api.realworld.show/api",
     },

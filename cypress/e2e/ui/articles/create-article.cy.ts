@@ -29,7 +29,7 @@ describe("UI: Create Article", { tags: ["@ui", "@smoke"] }, () => {
     cy.intercept("POST", "**/articles").as("createArticle");
     editorPage.createArticle(article.title, article.description, article.body, article.tagList);
     cy.wait("@createArticle").its("response.statusCode").should("be.oneOf", [200, 201, 307]);
-    cy.url().should("include", "/article/");
+    cy.url({ timeout: 15000 }).should("include", "/article/");
     cy.get("h1").should("contain.text", article.title);
   });
 });

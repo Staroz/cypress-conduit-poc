@@ -11,10 +11,11 @@
     "cy:run:ui": "cypress run --expose grepTags=@ui",
     "cy:run:smoke": "cypress run --expose grepTags=@smoke",
     "cy:run:regression": "cypress run --expose grepTags=@regression",
-    "report:merge": "mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",                  
-    "report:generate": "marge mochawesome-report/merged.json --reportDir mochawesome-report --inline",               
-    "report": "npm run report:merge && npm run report:generate",                                                     
-    "cy:run:report": "npm run cy:run && npm run report" 
+    "report:merge": "mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",
+    "report:generate": "marge mochawesome-report/merged.json --reportDir mochawesome-report --inline",
+    "report": "npm run report:merge && npm run report:generate",
+    "cy:run:report": "npm run cy:run && npm run report",
+     "lint": "eslint cypress/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "@cypress/grep": "^6.0.0",
     "@faker-js/faker": "^10.4.0",
     "cypress": "^15.12.0",
+    "eslint": "^10.1.0",
+    "eslint-plugin-cypress": "^6.2.1",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.1.1",
     "mochawesome-report-generator": "^6.3.2",
