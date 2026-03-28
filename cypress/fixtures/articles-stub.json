@@ -1,0 +1,39 @@
+{
+  "articles": [
+    {
+      "slug": "stub-article-1",
+      "title": "Stubbed Article One",
+      "description": "This is a stubbed article",
+      "body": "Stubbed content",
+      "tagList": ["testing"],
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z",
+      "favorited": false,
+      "favoritesCount": 0,
+      "author": {
+        "username": "stubuser",
+        "bio": null,
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    },
+    {
+      "slug": "stub-article-2",
+      "title": "Stubbed Article Two",
+      "description": "Another stubbed article",
+      "body": "More stubbed content",
+      "tagList": ["cypress"],
+      "createdAt": "2026-01-02T00:00:00.000Z",
+      "updatedAt": "2026-01-02T00:00:00.000Z",
+      "favorited": false,
+      "favoritesCount": 5,
+      "author": {
+        "username": "stubuser",
+        "bio": null,
+        "image": "https://api.realworld.io/images/smiley-cyrus.jpeg",
+        "following": false
+      }
+    }
+  ],
+  "articlesCount": 2
+}

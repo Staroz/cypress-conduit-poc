@@ -1,20 +1,35 @@
-describe("Global Feed", 
-  // {tags: ["@ui", "@smoke"]}, 
-  () => {
-  beforeEach (()=> {
-    cy.visit("/")
-  })
+describe("Global Feed", () => {
 
-  it("should display the app name in the banner", ()=> {
-    cy.get(".banner h1").should("be.visible");
-  })
-  it("should display the global feed tab", ()=> {
-    cy.get(".feed-toggle").should("be.visible");
-  })
-  it("should display a list of articles", ()=> {
-    cy.get(".article-preview").should("have.length.greaterThan", 0)
-  })
-  it("should display popular tags in the sidebar", ()=> {
-    cy.get(".tag-list .tag-pill").should("have.length.greaterThan", 0)
-  })
-})
+  it("should load articles from the real API", () => {
+    cy.intercept("GET", "**/articles*").as("getArticles");
+    cy.visit("/");
+    cy.wait("@getArticles").its("response.statusCode").should("equal", 200);
+    cy.get(".article-preview").should("have.length.greaterThan", 0);
+  });
+
+  it("should receive a valid tags list from the API", () => {
+    cy.intercept("GET", "**/tags").as("getTags");
+    cy.visit("/");
+    cy.wait("@getTags")
+      .its("response.body.tags")
+      .should("be.an", "array")
+      .and("have.length.greaterThan", 0);
+  });
+
+  it("should display stubbed articles from fixture", () => {
+    cy.intercept("GET", "**/articles*", { fixture: "articles-stub.json" }).as("stubbedArticles");
+    cy.visit("/");
+    cy.wait("@stubbedArticles");
+    cy.get(".article-preview").should("have.length", 2);
+    cy.get(".article-preview").first().should("contain.text", "Stubbed Article One");
+    cy.get(".article-preview").last().should("contain.text", "Stubbed Article Two");
+  });
+
+  it("should handle API error gracefully", () => {
+    cy.on("uncaught:exception", () => false);
+    cy.intercept("GET", "**/articles**", { statusCode: 500, body: {} }).as("serverError");
+    cy.visit("/");
+    cy.wait("@serverError");
+    cy.get(".banner").should("be.visible");
+  });
+});
