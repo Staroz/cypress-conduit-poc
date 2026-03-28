@@ -4,7 +4,7 @@ import { buildArticle } from "../../../support/factories/article.factory";
 
 const profilePage = new ProfilePage();
 
-describe("UI: User Profile", () => {
+describe("UI: User Profile", { tags: ["@ui", "@regression"] }, () => {
   const user = buildUser();
 
   before(() => {

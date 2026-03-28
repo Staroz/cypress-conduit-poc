@@ -1,6 +1,6 @@
 import { buildUser } from "../../support/factories/user.factory";
 
-describe("API: Authentication", () => {
+describe("API: Authentication", { tags: ["@api", "@smoke"] }, () => {
 
   it("should register a new user", () => {
     const user = buildUser();
@@ -21,7 +21,7 @@ describe("API: Authentication", () => {
     });
   });
 
-  it("should return error for required field missing", () => {
+  it("should return error for required field missing", { tags: ["@regression"] }, () => {
     const user = buildUser({ username: "" });
     cy.request({
       method: "POST",

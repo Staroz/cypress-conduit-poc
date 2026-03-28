@@ -1,4 +1,4 @@
-describe("Global Feed", () => {
+describe("Global Feed", { tags: ["@ui", "@smoke"] }, () => {
 
   it("should load articles from the real API", () => {
     cy.intercept("GET", "**/articles*").as("getArticles");
@@ -25,7 +25,7 @@ describe("Global Feed", () => {
     cy.get(".article-preview").last().should("contain.text", "Stubbed Article Two");
   });
 
-  it("should handle API error gracefully", () => {
+  it("should handle API error gracefully", { tags: ["@regression"] }, () => {
     cy.on("uncaught:exception", () => false);
     cy.intercept("GET", "**/articles**", { statusCode: 500, body: {} }).as("serverError");
     cy.visit("/");

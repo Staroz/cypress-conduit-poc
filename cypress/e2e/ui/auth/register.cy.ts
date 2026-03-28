@@ -3,7 +3,7 @@ import { buildUser } from "../../../support/factories/user.factory";
 
 const registerPage = new RegisterPage();
 
-describe("UI: Register", () => {
+describe("UI: Register", { tags: ["@ui", "@smoke"] }, () => {
 
   beforeEach(() => {
     registerPage.visit();

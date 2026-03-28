@@ -4,7 +4,7 @@ import { buildArticle } from "../../../support/factories/article.factory";
 
 const articlePage = new ArticlePage();
 
-describe("UI: Delete Article", () => {
+describe("UI: Delete Article", { tags: ["@ui", "@regression"] }, () => {
   const user = buildUser();
   let articleSlug: string;
 

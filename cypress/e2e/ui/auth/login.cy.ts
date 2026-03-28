@@ -3,7 +3,7 @@ import { buildUser } from "../../../support/factories/user.factory";
 
 const loginPage = new LoginPage();
 
-describe("UI: Login", () => {
+describe("UI: Login", { tags: ["@ui", "@smoke"] }, () => {
   const user = buildUser();
 
   before(() => {
@@ -27,7 +27,7 @@ describe("UI: Login", () => {
     cy.get(".nav-link").should("contain.text", user.username);
   });
 
-  it("should show error for wrong password", () => {
+  it("should show error for wrong password", { tags: ["@regression"] }, () => {
     loginPage.loginWith(user.email, "wrongpassword123");
     cy.get(loginPage.errorMessages).should("be.visible");
   });

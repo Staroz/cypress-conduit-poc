@@ -6,7 +6,7 @@ import { buildArticle } from "../../../support/factories/article.factory";
 const editorPage = new EditorPage();
 const articlePage = new ArticlePage();
 
-describe("UI: Edit Article", () => {
+describe("UI: Edit Article", { tags: ["@ui", "@regression"] }, () => {
   const user = buildUser();
   let articleSlug: string;
 

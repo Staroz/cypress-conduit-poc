@@ -1,7 +1,9 @@
 import { buildUser } from "../../support/factories/user.factory";
 import { buildArticle } from "../../support/factories/article.factory";
 
-describe("API: Articles CRUD", () => {
+describe("API: Articles CRUD", {
+  tags: ["@api"]
+}, () => {
   const apiUrl = Cypress.env("apiUrl");
   let token: string;
 

@@ -16,6 +16,14 @@ interface Article {
 }
 
 declare namespace Cypress {
+  interface SuiteConfigOverrides {
+    tags?: string | string[];
+  }
+
+  interface TestConfigOverrides {
+    tags?: string | string[];
+  }
+
   interface Chainable {
     loginViaApi(email: string, password: string): Chainable<User>;
     registerViaApi(user: User): Chainable<User>;

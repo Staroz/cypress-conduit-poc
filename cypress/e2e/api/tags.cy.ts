@@ -1,4 +1,4 @@
-describe("API: Tags", () => {
+describe("API: Tags", { tags: ["@api", "@smoke"] }, () => {
   const apiUrl = Cypress.env("apiUrl");
 
   it("should return a list of tags", () => {

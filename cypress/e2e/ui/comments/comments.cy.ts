@@ -4,7 +4,7 @@ import { buildArticle } from "../../../support/factories/article.factory";
 
 const articlePage = new ArticlePage();
 
-describe("UI: Comments", () => {
+describe("UI: Comments", { tags: ["@ui", "@regression"] }, () => {
   const user = buildUser();
   let articleSlug: string;
 

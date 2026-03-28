@@ -1,6 +1,6 @@
 import { buildUser } from "../../support/factories/user.factory";
 
-describe("API: Profiles", () => {
+describe("API: Profiles", { tags: ["@api", "@regression"] }, () => {
   const apiUrl = Cypress.env("apiUrl");
   let token: string;
   let username: string;

@@ -4,7 +4,7 @@ import { buildArticle } from "../../../support/factories/article.factory";
 
 const editorPage = new EditorPage();
 
-describe("UI: Create Article", () => {
+describe("UI: Create Article", { tags: ["@ui", "@smoke"] }, () => {
   const user = buildUser();
 
   before(() => {
