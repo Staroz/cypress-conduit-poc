@@ -1,6 +1,14 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  reporter: "mochawesome",
+  reporterOptions: {
+    reportDir: "mochawesome-report",
+    overwrite: false,
+    html: false,
+    json: true,
+    timestamp: "mmddyyyy_HHMMss",
+  },
   e2e: {
     baseUrl: "https://demo.realworld.show",
     specPattern: "cypress/e2e/**/*.cy.ts",

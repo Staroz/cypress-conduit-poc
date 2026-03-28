@@ -6,11 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",                                                                                                   
-    "cy:run:api": "cypress run --env grepTags=@api",                                                                           
-    "cy:run:ui": "cypress run --env grepTags=@ui",  
-    "cy:run:smoke": "cypress run --env grepTags=@smoke",                                                                       
-    "cy:run:regression": "cypress run --env grepTags=@regression"
+    "cy:run": "cypress run",
+    "cy:run:api": "cypress run --env grepTags=@api",
+    "cy:run:ui": "cypress run --env grepTags=@ui",
+    "cy:run:smoke": "cypress run --env grepTags=@smoke",
+    "cy:run:regression": "cypress run --env grepTags=@regression",
+    "report:merge": "mochawesome-merge mochawesome-report/*.json > mochawesome-report/merged.json",                  
+    "report:generate": "marge mochawesome-report/merged.json --reportDir mochawesome-report --inline",               
+    "report": "npm run report:merge && npm run report:generate",                                                     
+    "cy:run:report": "npm run cy:run && npm run report" 
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,9 @@
     "@cypress/grep": "^6.0.0",
     "@faker-js/faker": "^10.4.0",
     "cypress": "^15.12.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2",
     "typescript": "^5.9.3"
   }
 }

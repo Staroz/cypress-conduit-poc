@@ -1,2 +1,7 @@
 node_modules/
-.claude
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+mochawesome-report/
+.env
+.claude/
